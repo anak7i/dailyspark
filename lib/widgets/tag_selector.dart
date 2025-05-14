@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 
 class TagSelector extends StatefulWidget {
+  const TagSelector({super.key});
+
   @override
   State<TagSelector> createState() => _TagSelectorState();
 }

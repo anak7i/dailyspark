@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 
 class OnboardingScreen extends StatefulWidget {
+  const OnboardingScreen({super.key});
+
   @override
   State<OnboardingScreen> createState() => _OnboardingScreenState();
 }
@@ -53,6 +55,7 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
+            SizedBox(height: 40),
             Text(
               'What tasks do you want to track today?',
               style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
@@ -96,16 +99,28 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
                       child: Column(
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: [
+                          SizedBox(height: 16),
                           Icon(
                             tasks[idx]['icon'],
-                            size: 40,
+                            size: 32,
                             color: Colors.white,
                           ),
-                          SizedBox(height: 12),
-                          Text(
-                            tasks[idx]['label'],
-                            style: TextStyle(fontSize: 16, color: Colors.white),
+                          SizedBox(height: 16),
+                          Padding(
+                            padding: const EdgeInsets.symmetric(horizontal: 16.0),
+                            child: Text(
+                              tasks[idx]['label'],
+                              style: TextStyle(
+                                fontSize: 15,
+                                color: Colors.white,
+                                height: 1.2,
+                              ),
+                              textAlign: TextAlign.center,
+                              maxLines: 2,
+                              overflow: TextOverflow.ellipsis,
+                            ),
                           ),
+                          SizedBox(height: 16),
                         ],
                       ),
                     ),
